@@ -16,6 +16,7 @@ var dataCacheName = 'weatherData-v3';
 var cacheName = 'weatherPWA-final-1';
 var filesToCache = [
   '/pwa',
+  '/pwa/icons',
   '/pwa/index.html',
   '/pwa/scripts/app.js',
   '/pwa/styles/inline.css',
@@ -31,7 +32,7 @@ var filesToCache = [
   '/pwa/images/sleet.png',
   '/pwa/images/snow.png',
   '/pwa/images/thunderstorm.png',
-  '/pwa/images/wind.png'
+  '/pwa/images/wind.png'  
 ];
 
 self.addEventListener('install', function(e) {
