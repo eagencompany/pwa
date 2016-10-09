@@ -14,25 +14,17 @@
 }
   </script>
   <script>
-    window.addEventListener('beforeinstallprompt', function(e) {
-  // beforeinstallprompt Event fired
+var deferredPrompt;
 
-  // e.userChoice will return a Promise. 
-  // For more details read: http://www.html5rocks.com/en/tutorials/es6/promises/
-        console.log('add event');
-  e.userChoice.then(function(choiceResult) {
+window.addEventListener('beforeinstallprompt', function(e) {
+  console.log('beforeinstallprompt Event fired');
+  e.preventDefault();
 
-    console.log(choiceResult.outcome);
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
 
-    if(choiceResult.outcome == 'dismissed') {
-      console.log('User cancelled home screen install');
-    }
-    else {
-      console.log('User added to home screen');
-    }
-  });
+  return false;
 });
-      var deferredPrompt;
       btnSave.addEventListener('click', function() {
   if(deferredPrompt !== undefined) {
     // The user has had a postive interaction with our app and Chrome
