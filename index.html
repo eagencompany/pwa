@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="manifest" href="/pwa/manifest.json">
   <script>
     if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/pwa/service-worker.js?v=3').then(function(registration) {
@@ -31,7 +32,7 @@
   });
 });
   </script>
-  <link rel="manifest" href="/pwa/manifest.json">
+
   
 </head>
 <body>
